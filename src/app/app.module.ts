@@ -8,6 +8,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
+import { FormsModule }   from '@angular/forms';
 import { NguiMapModule} from '@ngui/map';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
@@ -40,6 +41,7 @@ import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.com
     NavbarModule,
     FooterModule,
     FixedPluginModule,
+        FormsModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY'})
 
   ],
