@@ -20,6 +20,7 @@ import { MapsComponent }   from './maps/maps.component';
 import { NotificationsComponent }   from './notifications/notifications.component';
 import { UpgradeComponent }   from './upgrade/upgrade.component';
 import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.component';
+import { GlucoseComponent } from './user/glucose/glucose.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.com
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    BloodPreasureComponent
+    BloodPreasureComponent,
+    GlucoseComponent
   ],
   imports: [
     BrowserModule,
