@@ -19,12 +19,12 @@ export class TableComponent implements OnInit{
         this.tableData1 = {
             headerRow: [ 'Nome', 'Data de Nascimento', 'Contacto de Emergência'],
             dataRows: [
-                [ 'António Silva', 'Niger', 'Oud-Turnhout'],
-                [ 'João Braga', 'Curaçao', 'Sinaai-Waas'],
-                [ 'Nelson Parente', 'Netherlands', 'Baileux'],
-                [ 'Miguel Noivo', 'Korea, South', 'Overland Park'],
-                [ 'Joaquim Sousa', 'Malawi', 'Feldkirchen in Kärnten'],
-                [ 'Pedro Lopes', 'Chile', 'Gloucester']
+                [ 'António Silva', '12/05/1935', '917734901'],
+                [ 'João Braga', '02/09/1939', '923676445'],
+                [ 'Nelson Parente', '02/09/1939', '923665789'],
+                [ 'Miguel Noivo', '14/04/1900', '911989445'],
+                [ 'Joaquim Sousa', '14/02/1940', '964212455'],
+                [ 'Pedro Lopes', '02/09/1939', '929899543']
             ]
         };
         this.tableData2 = {
