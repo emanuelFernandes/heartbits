@@ -43,9 +43,9 @@ const colors: any = {
 })
 export class NotesComponent implements OnInit {
 
-@ViewChild('modalContent') modalContent: TemplateRef<any>;
-
   view: string = 'month';
+
+  newNote = {date:null, text:"", color:'#ad2121'};
 
   viewDate: Date = new Date();
 
@@ -75,34 +75,16 @@ export class NotesComponent implements OnInit {
   events: CalendarEvent[] = [
     {
       start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      //end: addDays(new Date(), 1),
+      title: 'Queda depois do almoço',
       color: colors.red,
       actions: this.actions
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'Pouco apetite',
       color: colors.yellow,
       actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: new Date(),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
     }
   ];
 
@@ -137,22 +119,36 @@ export class NotesComponent implements OnInit {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+    if(action=='Edited'){
+    	this.newNote.date = event.start.getFullYear()+"-"+event.start.getMonth()+"-"+event.start.getDate();
+    	console.log(this.newNote.date);
+    	this.newNote.color = event.color.primary;
+    	this.newNote.text = event.title;
+
+    	//console.log(event);
+    }
   }
 
-  addEvent(): void {
+  addEvent(text, date, color): void {
     this.events.push({
-      title: 'New event',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
+      title: text,
+      start: startOfDay(new Date(date)),
+      //end: endOfDay(new Date(date)),
+      color: color,
+      actions: this.actions
     });
     this.refresh.next();
+  }
+
+  onSubmit(){
+  	//console.log(new Date(this.newNote.date));
+  	//console.log(this.newNote.color);
+  	var  c =  
+  	{
+    primary: this.newNote.color,
+    secondary: this.newNote.color
+  };
+  	this.addEvent(this.newNote.text,this.newNote.date, c );
   }
 
   //constructor() { }
