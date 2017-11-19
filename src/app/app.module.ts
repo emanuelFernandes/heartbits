@@ -26,6 +26,7 @@ import { GlucoseComponent } from './user/glucose/glucose.component';
 import { NotesComponent } from './user/notes/notes.component';
 import { CalendarModule } from 'angular-calendar';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReportComponent } from './user/report/report.component';
 
 
 
@@ -44,7 +45,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MedicationComponent,
     MedicationListComponent,
     GlucoseComponent,
-    NotesComponent
+    NotesComponent,
+    ReportComponent
 
   ],
   imports: [

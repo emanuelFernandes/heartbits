@@ -1,0 +1,69 @@
+   <div class="container-fluid">
+    <h4>Relatório semanal</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+            <div class="header">
+                    <h4 class="title">Glicose</h4>
+                    <p class="category">Níveis por mg/dl</p>
+                </div>
+                <div class="content">
+                    <div id="chartActivity" class="ct-chart"></div>
+                    <div class="footer">
+                        <div class="chart-legend">
+                            <i class="fa fa-circle text-info"></i> 19/11/2017
+                            <i class="fa fa-circle text-warning"></i> 18/11/2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="header">
+                    <h4 class="title">Pressão arterial</h4>
+                    <p class="category">Valores do João</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <!--<table class="table table-hover"> -->
+                        <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of tableData2.dataRows" >
+                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0">  {{cell}} </ng-container> 
+                                <ng-container *ngIf="i!=0"> 
+                                    <span [ngStyle]=getStyle(cell)>{{sist(cell)}} </span> 
+                                    / 
+                                    <span [ngStyle]=getStyleDist(cell)>{{sistDist(cell)}} </span>
+
+                                 </ng-container>
+
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Notas diárias</h5>
+                <div class="typo-line">
+                    <p>
+                      <b class="text-danger">2017/11/17: </b> <span>Queda antes do pequeno almoço</span>  
+                    </p>
+                    <p>
+                      <b class="text-info">2017/11/18: </b> <span>Pouco apetite</span>  
+                    </p>
+                    <p>
+                      <b class="text-danger">2017/11/19: </b> <span>Queda depois do almoço</span>  
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
