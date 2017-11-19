@@ -30,36 +30,51 @@
                 </div>
                 <br>
                 <br>
-                <div class="places-buttons">
+                <div class="content">
                     <div class="row">
                         <div class="col-md-9">
-                            <h5>Notifications Places
-                                <p class="category">Click to view notifications</p>
+                            <h5>Enviar notificação
+                                <p class="category">Configure a notificação a enviar</p>
                             </h5>
                         </div>
                     </div>
-                    <div class="row">
+                    <div >
+                    <div class="row" [style.background-color]="alertColor">
                         <div class="col-md-3">
-                            <button class="btn btn-default btn-block" (click)="showNotification('top','left')">Top Left</button>
+                        <div class="form-group">
+                            <label><b>Tipo de notificação</b></label>
+                            <br>
+                           <select [(ngModel)]="selectedType" name="type" class="form-control" (change)="onChange($event.target.value)">
+                                    <option *ngFor="let i of type">{{i}}</option>
+                            </select>
                         </div>
-                        <div class="col-md-3">
-                            <button class="btn btn-default btn-block" (click)="showNotification('top','center')">Top Center</button>
                         </div>
-                        <div class="col-md-3">
-                            <button class="btn btn-default btn-block" (click)="showNotification('top','right')">Top Right</button>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                            <label><b>Associado a:</b></label>
+                            <br>
+                           <select name="type" class="form-control" >
+                                    <option *ngFor="let i of associated">{{i}}</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="col-md-2">
+                             <div class="form-group">
+                            <label><b>Sobre:</b></label>
+                            <br>
+                           <select name="type" class="form-control" >
+                                    <option *ngFor="let i of users">{{i}}</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <button class="btn btn-default btn-block" (click)="showNotification('bottom','left')">Bottom Left</button>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                            <label><b>Mensagem:</b></label>
+                            <input class="form-control" type="text" name="message">
                         </div>
-                        <div class="col-md-3">
-                            <button class="btn btn-default btn-block" (click)="showNotification('bottom','center')">Bottom Center</button>
-                        </div>
-                        <div class="col-md-3">
-                            <button class="btn btn-default btn-block" (click)="showNotification('bottom','right')">Bottom Right</button>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

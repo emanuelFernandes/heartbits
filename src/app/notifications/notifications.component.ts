@@ -11,6 +11,7 @@ declare var $:any;
 
 export class NotificationsComponent{
 
+    alertColor="#ad2121";
     constructor(private router: Router){}
     showNotification(from, align){
         var type = ['','info','success','warning','danger'];
@@ -41,4 +42,29 @@ export class NotificationsComponent{
     goNotes(){
         this.router.navigate(['/user/notes']);
     }
+
+    selectedType="Urgente";
+
+    onChange(value){
+        console.log(value);
+        switch(value){
+            case "Urgente":
+                this.alertColor = '#ad2121';
+                break;
+            
+            case "Alerta":
+                this.alertColor = '#e3bc08';
+                break;
+
+            case "Informativo":
+                this.alertColor = '#1e90ff';
+                break;
+        }
+    }
+
+    type=['Urgente', 'Alerta', 'Informativo'];
+
+    associated=['Medicação', "Glicemia", "Pressão arterial", "Diário"];
+
+    users=["António Silva", "Miguel", "João"];
 }
