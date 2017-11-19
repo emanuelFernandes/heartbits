@@ -10,6 +10,8 @@ export class UserComponent implements OnInit{
     public route1 = '/user/glucose';
     public route2 = '/user/bloodPreasure';
     public route3 = '/user/medication';
+    public route4 = '/user/report';
+    public route5 = '/user/notes';
     ngOnInit(){
     }
 }

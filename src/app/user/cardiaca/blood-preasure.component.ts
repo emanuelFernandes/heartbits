@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import * as Chartist from 'chartist';
 
 declare interface TableData {
     headerRow: string[];
     dataRows: string[][];
 }
 
-
 @Component({
-  selector: 'app-report',
-  templateUrl: './report.component.html',
-  styleUrls: ['./report.component.css']
+  selector: 'app-blood-preasure',
+  templateUrl: './blood-preasure.component.html',
+  styleUrls: ['./blood-preasure.component.css']
 })
-export class ReportComponent implements OnInit {
+export class BloodPreasureComponent implements OnInit {
 
   constructor() { }
 
@@ -24,6 +22,10 @@ export class ReportComponent implements OnInit {
    EMERGENCYDIST = 110;
    MAXFC = 100;
    MINFC = 60;
+
+   newMeasure={date:null, dist:null, sist:null, day:null};
+
+   timeOfDay = ["Manhã", "Tarde", "Noite" ];
 
   ngOnInit() {
 
@@ -38,37 +40,8 @@ export class ReportComponent implements OnInit {
             ]
         };
 
-  	var data = {
-          labels: ['0H', '2H', '4H', '6H', '8H', '10H', '12H', '14H', '16H', '18H', '20H', '22H'],
-          series: [
-            [95, 55, 126, 220, 280, 180, 260, 180, 120, 75, 180, 130],
-             [120, 130, 160, 200, 170, 120, 170, 210, 250, 200, 150, 120]
-            ]
-        }
-        ;
-
-        var options = {
-            seriesBarDistance: 10,
-            axisX: {
-                showGrid: false
-            },
-            height: "245px"
-        };
-
-        var responsiveOptions = [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc: function (value) {
-                return value[0];
-              }
-            }
-          }]
-        ];
-
-        Chartist.Line('#chartActivity', data, options, responsiveOptions);
-
   }
+
 
   getStyle(cell){
   	const value = cell.split('/')[0];
@@ -116,6 +89,50 @@ export class ReportComponent implements OnInit {
   	}
   }
 
-  
+	onChange(value) {
+	console.log(value);
+	}
+   
+   default(date){
+   	//date="";
+   	var exp = new RegExp("-", "g");
+
+   date = date.replace(exp,'/');
+   		
+   	return [date, '00/00', '00/00', '00/00'];
+   }
+
+   timeOfDayToInd(t){
+   	switch (t) {
+   		case "Manhã":
+   			return 1;
+   			
+   		case "Tarde" :
+
+   		return 2;
+
+   		case "Noite" :
+
+   		return 3;
+   	}
+   }
+
+   onSubmit(){
+   	var flag=false;
+   	var ind= 0;
+   	var exp = new RegExp("-", "g")
+   	for (var d of this.tableData2.dataRows){
+   		console.log(d[0],this.newMeasure.date.replace(exp,'/'));
+   		if(d[0] == this.newMeasure.date.replace(exp,'/')){
+   			flag=true;
+   			break;
+   		}
+   		ind++;
+   	}
+   	if(!flag){
+   	this.tableData2.dataRows.push(this.default(this.newMeasure.date));
+   }
+   this.tableData2.dataRows[ind][this.timeOfDayToInd(this.newMeasure.day)] = this.newMeasure.sist+'/'+this.newMeasure.dist;
+   }
 
 }

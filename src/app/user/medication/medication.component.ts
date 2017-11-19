@@ -39,10 +39,10 @@ export class MedicationComponent implements OnInit {
 			headerRow: [ 'Princípio ativo', 'Dose',  '', '', "Quando tomar", '', "" ],
 			headerRow2: ['', '', 'Jejum', 'Pós Pequeno-almoço', "Almoço", 'Tarde', "Jantar"],
             dataRows: [
-                ['Captopril', '25mg', '2', '   X', '     X', '   X', '   X'],
-                ['Metformina', '500mg', '   X', '     1', '   1', '   X', '   1'],
-                ['Sinvastatina', '40mg', '   X', '     X', '   X', '   X', '   1'],
-                ['Ciprofibrato', '100mg', '   X', '     X', '   X', '   X', '   1' ],
+                ['Captopril', '25mg', '2', 'X', 'X', 'X', 'X'],
+                ['Metformina', '500mg', 'X', '1', '   1', 'X', '1'],
+                ['Sinvastatina', '40mg', 'X', 'X', 'X', 'X', '1'],
+                ['Ciprofibrato', '100mg', 'X', 'X', 'X', 'X', '1' ],
             ]
         };
 

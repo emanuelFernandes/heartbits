@@ -23,11 +23,12 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let row of tableData2.dataRows; let j = index" >
-                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0">  {{cell}} </ng-container> 
-                                <ng-container *ngIf="i!=0"> 
-                                	<span [ngStyle]=getStyle(cell)>{{sist(cell)}} </span> 
-                                    <span [ngStyle]=getStyleDist(cell)>{{sistDist(cell)}} </span>
-
+                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0 || i===1">  {{cell}} </ng-container> 
+                                <ng-container *ngIf="i>1 ">
+                                    <div style="margin-left: 35%">
+                                            {{cell}}
+                                            <input *ngIf="cell !== 'X'" type="checkbox" name="numb" class="form-control border-input">
+                                        </div>
                                  </ng-container>
                                     </td>
                                     <span> <img class="avatar" src="{{srcL[j]}}" alt="..."/> </span>
