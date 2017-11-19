@@ -17,7 +17,7 @@ export class MedicationComponent implements OnInit {
 
   public tableData2: TableData;
 
-  public route = "/user";
+  public route = "/user/medication-list";
 
   public srcL = ["assets/img/faces/captopril.png", 'assets/img/faces/comp2.png', 'assets/img/faces/comp3.png', 'assets/img/faces/cipro.png' ];
 

@@ -3,8 +3,7 @@
         <div class="col-md-12">
             <div class="card card-plain">
                 <div class="header">
-                    <h4 class="title">Medicação</h4>
-                    <p class="category">Valores de António Silva</p>
+                    <h4 class="title">Jejum</h4>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <!--<table class="table table-hover"> -->
@@ -13,29 +12,19 @@
                             <tr>
                                 <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
                             </tr>
-                            <tr>
-                                <th *ngFor="let cell of tableData2.headerRow2">
-                                    <a [routerLink]="[route]">
-                                        {{ cell }}
-                                    </a>
-                                </th>
-                            </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let row of tableData2.dataRows; let j = index" >
-                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0">  {{cell}} </ng-container> 
-                                <ng-container *ngIf="i!=0"> 
-                                	<span [ngStyle]=getStyle(cell)>{{sist(cell)}} </span> 
-                                    <span [ngStyle]=getStyleDist(cell)>{{sistDist(cell)}} </span>
-
-                                 </ng-container>
-                                    </td>
-                                    <span> <img class="avatar" src="{{srcL[j]}}" alt="..."/> </span>
-                                    <ng-container *ngIf="j===3">
-                                            <font size="3" color="red">Prazo de validade chegou ao fim</font>
-                                    </ng-container>    
+                            <tr *ngFor="let row of tableData2.dataRows; let j = index">
+                                <td *ngFor="let cell of row; let i = index">
+                                    <a *ngIf="i===0" [routerLink]="[route]">
+                                        {{cell}}
+                                    </a>
+                                    <div *ngIf="i!=0">
+                                        {{cell}}
+                                    </div>
+                                </td>
+                                <span> <img class="avatar" src="{{srcL[j]}}" alt="..."/> </span> 
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>

@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 declare interface TableData {
 	headerRow: string[];
-	headerRow2: string[];
     dataRows: string[][];
 }
 
 @Component({
   selector: 'app-medication',
-  templateUrl: './medication.component.html',
-  styleUrls: ['./medication.component.css']
+  templateUrl: './medication-list.component.html',
+  styleUrls: ['./medication-list.component.css']
 })
-export class MedicationComponent implements OnInit {
+export class MedicationListComponent implements OnInit {
 
   constructor() { }
 
@@ -19,7 +18,7 @@ export class MedicationComponent implements OnInit {
 
   public route = "/user";
 
-  public srcL = ["assets/img/faces/captopril.png", 'assets/img/faces/comp2.png', 'assets/img/faces/comp3.png', 'assets/img/faces/cipro.png' ];
+  public srcL = ["assets/img/faces/captopril.png", "assets/img/faces/comp5.png", "assets/img/faces/captopril.png", 'assets/img/faces/cipro.png', 'assets/img/faces/comp2.png', 'assets/img/faces/comp2.png'];
 
 
    MAXSIST = 140;
@@ -36,14 +35,15 @@ export class MedicationComponent implements OnInit {
   ngOnInit() {
 
   	this.tableData2 = {
-			headerRow: [ 'Princípio ativo', 'Dose',  '', '', "Quando tomar", '', "" ],
-			headerRow2: ['', '', 'Jejum', 'Pós Pequeno-almoço', "Almoço", 'Tarde', "Jantar"],
-            dataRows: [
-                ['Captopril', '25mg', '2', '   X', '     X', '   X', '   X'],
-                ['Metformina', '500mg', '   X', '     1', '   1', '   X', '   1'],
-                ['Sinvastatina', '40mg', '   X', '     X', '   X', '   X', '   1'],
-                ['Ciprofibrato', '100mg', '   X', '     X', '   X', '   X', '   1' ],
-            ]
+			headerRow: [ 'Nome', 'Princípio ativo', 'Dose'],
+			dataRows: [
+				[ 'António Silva', 'Captopril', '25mg (2 comprimidos)'],
+				[ 'João Braga', 'Propranolol', '40mg (1 comprimido)'],
+				[ 'Nelson Parente', 'Captopril', '25mg (1 comprimido)',],
+				[ 'Miguel Noivo', 'Ciprofibrato', '10Kg (50 comprimidos)'],
+				[ 'Joaquim Sousa', 'Metformina', '500mg (1 comprimido)'],
+				[ 'Pedro Lopes', 'Metformina', '500mg (1 comprimido)']
+			]
         };
 
   }

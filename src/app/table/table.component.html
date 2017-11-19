@@ -11,10 +11,13 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let row of tableData1.dataRows">
-                                <td *ngFor="let cell of row">
-                                    <a [routerLink]="[route.path]">
+                                <td *ngFor="let cell of row; let i = index">
+                                    <a *ngIf="i===0" [routerLink]="[route.path]">
                                         {{cell}}
                                     </a>
+                                    <div *ngIf="i!=0">
+                                            {{cell}}
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
