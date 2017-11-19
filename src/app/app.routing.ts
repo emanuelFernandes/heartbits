@@ -12,6 +12,8 @@ import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.com
 import { MedicationComponent } from './user/medication/medication.component';
 import { GlucoseComponent } from './user/glucose/glucose.component';
 import { NotesComponent } from './user/notes/notes.component';
+import { ReportComponent } from './user/report/report.component';
+
 
 
 export const AppRoutes: Routes = [
@@ -39,6 +41,10 @@ export const AppRoutes: Routes = [
     {
         path: 'user/glucose',
         component: GlucoseComponent
+    },
+    {
+        path: 'user/report',
+        component: ReportComponent
     },
     {
         path: 'user/notes',

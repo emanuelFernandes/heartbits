@@ -10,14 +10,16 @@ export class GlucoseComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
 
   	var data = {
           labels: ['0H', '2H', '4H', '6H', '8H', '10H', '12H', '14H', '16H', '18H', '20H', '22H'],
           series: [
             [130, 150, 180, 220, 280, 160, 130, 160, 200, 230, 180, 130]
-          ]
-        };
+            ]
+        }
+        ;
 
         var options = {
             seriesBarDistance: 10,
