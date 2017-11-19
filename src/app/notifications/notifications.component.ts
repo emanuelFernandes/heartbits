@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var $:any;
 
@@ -9,6 +10,8 @@ declare var $:any;
 })
 
 export class NotificationsComponent{
+
+    constructor(private router: Router){}
     showNotification(from, align){
         var type = ['','info','success','warning','danger'];
 
@@ -25,5 +28,17 @@ export class NotificationsComponent{
                 align: align
             }
         });
+    }
+
+    goGlucose(){
+        this.router.navigate(['/user/glucose']);
+    }
+
+    goMed(){
+        this.router.navigate(['/user/medication']);
+    }
+
+    goNotes(){
+        this.router.navigate(['/user/notes']);
     }
 }
