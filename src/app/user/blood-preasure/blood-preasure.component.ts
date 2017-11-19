@@ -21,6 +21,8 @@ export class BloodPreasureComponent implements OnInit {
    EMERGENCYSIST = 180;
    EMERGENCYDIST = 110;
 
+   newMeasure={date:"", dist:"", sist:"", fc:""};
+
   ngOnInit() {
 
   	this.tableData2 = {

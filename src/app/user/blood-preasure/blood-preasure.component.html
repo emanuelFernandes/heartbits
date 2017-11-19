@@ -7,7 +7,8 @@
                     <p class="category">Valores do João</p>
                 </div>
                 <div class="content table-responsive table-full-width">
-                    <table class="table table-hover">
+                    <!--<table class="table table-hover"> -->
+                    	<table class="table table-striped">
                         <thead>
                             <tr>
                                 <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
@@ -30,6 +31,38 @@
                 </div>
             </div>
         </div>
+                                <form>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Data</label>
+                                        <input type="date" class="form-control border-input"  value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Sistolica</label>
+                                        <input type="text" class="form-control border-input" placeholder="" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Distolica</label>
+                                        <input type="email" class="form-control border-input" placeholder="">
+                                    </div>
+                                </div>
+                                 <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">FC</label>
+                                        <input type="email" class="form-control border-input" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info btn-fill btn-wd">Inserir</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
     </div>
 </div>
 
