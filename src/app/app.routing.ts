@@ -8,6 +8,7 @@ import { IconsComponent }   from './icons/icons.component';
 import { MapsComponent }   from './maps/maps.component';
 import { NotificationsComponent }   from './notifications/notifications.component';
 import { UpgradeComponent }   from './upgrade/upgrade.component';
+import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.component';
 
 export const AppRoutes: Routes = [
     {
@@ -22,6 +23,10 @@ export const AppRoutes: Routes = [
     {
         path: 'user',
         component: UserComponent
+    },
+    {
+        path: 'user/bloodPreasure',
+        component: BloodPreasureComponent
     },
     {
         path: 'table',
