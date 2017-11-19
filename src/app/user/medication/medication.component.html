@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-plain">
+                <div class="header">
+                    <h4 class="title">Pressão arterial</h4>
+                    <p class="category">Valores do João</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <!--<table class="table table-hover"> -->
+                    	<table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of tableData2.dataRows" >
+                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0">  {{cell}} </ng-container> 
+                                <ng-container *ngIf="i!=0"> 
+                                	<span [ngStyle]=getStyle(cell)>{{sist(cell)}} </span> 
+                                	/ 
+                                	<span [ngStyle]=getStyleDist(cell)>{{sistDist(cell)}} </span>
+
+                                 </ng-container>
+
+                                	</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+                            <form (submit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Data</label>
+                                        <input [(ngModel)]="newMeasure.date" type="date" name="date" class="form-control border-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Sistolica</label>
+                                        <input [(ngModel)]="newMeasure.sist" name="sist" type="number" class="form-control border-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Distolica</label>
+                                        <input [(ngModel)]="newMeasure.dist" name="dist" type="number" class="form-control border-input">
+                                    </div>
+                                </div>
+                                 <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Altura do dia</label>
+                                        <br>
+                                       <select [(ngModel)]="newMeasure.day" name="day" class="form-control" (change)="onChange($event.target.value)">
+											    <option *ngFor="let i of timeOfDay">{{i}}</option>
+										</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info btn-fill btn-wd">Inserir</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+    </div>
+</div>
+

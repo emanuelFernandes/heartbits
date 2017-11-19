@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit{
     public route1 = '/user/glucose';
     public route2 = '/user/bloodPreasure';
+    public route3 = '/user/medication';
     ngOnInit(){
     }
 }

@@ -20,6 +20,7 @@ import { MapsComponent }   from './maps/maps.component';
 import { NotificationsComponent }   from './notifications/notifications.component';
 import { UpgradeComponent }   from './upgrade/upgrade.component';
 import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.component';
+import { MedicationComponent } from './user/medication/medication.component';
 import { GlucoseComponent } from './user/glucose/glucose.component';
 import { NotesComponent } from './user/notes/notes.component';
 import { CalendarModule } from 'angular-calendar';
@@ -39,6 +40,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NotificationsComponent,
     UpgradeComponent,
     BloodPreasureComponent,
+    MedicationComponent,
     GlucoseComponent,
     NotesComponent
 
