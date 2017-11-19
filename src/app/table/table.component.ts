@@ -17,14 +17,14 @@ export class TableComponent implements OnInit{
     public route = { path: '../user', title: 'User Profile',  icon:'ti-user', class: '' };
     ngOnInit(){
         this.tableData1 = {
-            headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary'],
+            headerRow: [ 'Nome', 'Data de Nascimento', 'Contacto de Emergência'],
             dataRows: [
-                ['1', 'Dakota Rice', 'Niger', 'Oud-Turnhout', '$36,738'],
-                ['2', 'Minerva Hooper', 'Curaçao', 'Sinaai-Waas', '$23,789'],
-                ['3', 'Sage Rodriguez', 'Netherlands', 'Baileux', '$56,142'],
-                ['4', 'Philip Chaney', 'Korea, South', 'Overland Park', '$38,735'],
-                ['5', 'Doris Greene', 'Malawi', 'Feldkirchen in Kärnten', '$63,542'],
-                ['6', 'Mason Porter', 'Chile', 'Gloucester', '$78,615']
+                [ 'António Silva', 'Niger', 'Oud-Turnhout'],
+                [ 'João Braga', 'Curaçao', 'Sinaai-Waas'],
+                [ 'Nelson Parente', 'Netherlands', 'Baileux'],
+                [ 'Miguel Noivo', 'Korea, South', 'Overland Park'],
+                [ 'Joaquim Sousa', 'Malawi', 'Feldkirchen in Kärnten'],
+                [ 'Pedro Lopes', 'Chile', 'Gloucester']
             ]
         };
         this.tableData2 = {

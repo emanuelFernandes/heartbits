@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class UserComponent implements OnInit{
-    public route = "/user/bloodPreasure";
+    public route = '/user/bloodPreasure';
     ngOnInit(){
     }
 }
