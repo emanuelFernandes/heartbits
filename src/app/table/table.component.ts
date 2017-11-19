@@ -14,6 +14,7 @@ declare interface TableData {
 export class TableComponent implements OnInit{
     public tableData1: TableData;
     public tableData2: TableData;
+    public route = { path: '../user', title: 'User Profile',  icon:'ti-user', class: '' };
     ngOnInit(){
         this.tableData1 = {
             headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary'],
