@@ -25,13 +25,13 @@
                             <tr *ngFor="let row of tableData2.dataRows; let j = index" >
                                <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0 || i===1">  {{cell}} </ng-container> 
                                 <ng-container *ngIf="i>1 ">
-                                    <div style="margin-left: 35%">
+                                    <div style="margin-left: 35%; margin-right: 55%; background-color: rgba(237, 61, 61, 0.146)"></div>
+                                    <div style="margin-left: 35%;">
                                             {{cell}}
-                                            <input *ngIf="cell !== 'X'" type="checkbox" name="numb" class="form-control border-input">
                                         </div>
                                  </ng-container>
                                     </td>
-                                    <span> <img class="avatar" src="{{srcL[j]}}" alt="..."/> </span>
+                                    <span> <img style="margin-top: 10px; margin-bottom: 10px; width: 75px; height: 75px;" class="avatar" src="{{srcL[j]}}" alt="..."/> </span>
                                     <ng-container *ngIf="j===3">
                                             <font size="3" color="red">Prazo de validade chegou ao fim</font>
                                     </ng-container>    
@@ -79,4 +79,12 @@
                         </form> -->
     </div>
 </div>
+
+<div class="container-fluid">
+        <div class="row">
+                <div class="form-group" class="col-md-8">
+                        <label>Notas</label>
+                        <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">Intolerâcia a Amoxicilina + Ácido Clavulânico
+                        </textarea>
+                    </div>
 
