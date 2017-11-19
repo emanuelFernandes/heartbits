@@ -10,6 +10,8 @@ import { NotificationsComponent }   from './notifications/notifications.componen
 import { UpgradeComponent }   from './upgrade/upgrade.component';
 import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.component';
 import { GlucoseComponent } from './user/glucose/glucose.component';
+import { NotesComponent } from './user/notes/notes.component';
+
 
 export const AppRoutes: Routes = [
     {
@@ -32,6 +34,10 @@ export const AppRoutes: Routes = [
     {
         path: 'user/glucose',
         component: GlucoseComponent
+    },
+    {
+        path: 'user/notes',
+        component: NotesComponent
     },
     {
         path: 'table',
