@@ -9,6 +9,7 @@ import { MapsComponent }   from './maps/maps.component';
 import { NotificationsComponent }   from './notifications/notifications.component';
 import { UpgradeComponent }   from './upgrade/upgrade.component';
 import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.component';
+import { AlimentacaoComponent } from './user/alimentacao/alimentacao.component';
 import { MedicationComponent } from './user/medication/medication.component';
 import { MedicationListComponent } from './user/medication-list/medication-list.component';
 import { GlucoseComponent } from './user/glucose/glucose.component';
@@ -34,6 +35,10 @@ export const AppRoutes: Routes = [
     {
         path: 'user/bloodPreasure',
         component: BloodPreasureComponent
+    },
+    {
+        path: 'user/food_restricts',
+        component: AlimentacaoComponent
     },
     {
         path: 'user/medication',

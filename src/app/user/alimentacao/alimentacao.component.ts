@@ -1,26 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 declare interface TableData {
-	headerRow: string[];
-	headerRow2: string[];
+    headerRow: string[];
     dataRows: string[][];
 }
 
 @Component({
-  selector: 'app-medication',
-  templateUrl: './medication.component.html',
-  styleUrls: ['./medication.component.css']
+  selector: 'app-blood-preasure',
+  templateUrl: './alimentacao.component.html',
+  styleUrls: ['./alimentacao.component.css']
 })
-export class MedicationComponent implements OnInit {
+export class AlimentacaoComponent implements OnInit {
 
   constructor() { }
 
   public tableData2: TableData;
-
-  public route = "/user/medication-list";
-
-  public srcL = ["assets/img/faces/captopril.png", 'assets/img/faces/comp2.png', 'assets/img/faces/comp3.png', 'assets/img/faces/cipro.png' ];
-
 
    MAXSIST = 140;
    MAXDIST = 90;
@@ -36,13 +30,13 @@ export class MedicationComponent implements OnInit {
   ngOnInit() {
 
   	this.tableData2 = {
-			headerRow: [ 'Princípio ativo', 'Dose',  '', '', "Quando tomar", '', "" ],
-			headerRow2: ['', '', 'Jejum', 'Pós Peq. almoço', "Almoço", 'Tarde', "Jantar"],
+            headerRow: [ 'Data', 'Manhã',  'Tarde', 'Noite' ],
             dataRows: [
-                ['Captopril', '25mg', '2', 'X', 'X', 'X', 'X'],
-                ['Metformina', '500mg', 'X', '1', '   1', 'X', '1'],
-                ['Sinvastatina', '40mg', 'X', 'X', 'X', 'X', '1'],
-                ['Ciprofibrato', '100mg', 'X', 'X', 'X', 'X', '1' ],
+                ['2017/11/14', '130/70','135/72', '130/73'],
+                ['2017/11/15', '135/74','145/71', '140/73'],
+                ['2017/11/16', '133/70','130/76', '129/74'],
+                ['2017/11/17', '183/95','133/71', '130/95' ],
+                ['2017/11/18', '130/70','145/72', '136/111'],
             ]
         };
 

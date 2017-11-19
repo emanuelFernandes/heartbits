@@ -20,6 +20,7 @@ import { MapsComponent }   from './maps/maps.component';
 import { NotificationsComponent }   from './notifications/notifications.component';
 import { UpgradeComponent }   from './upgrade/upgrade.component';
 import { BloodPreasureComponent } from './user/blood-preasure/blood-preasure.component';
+import { AlimentacaoComponent } from './user/alimentacao/alimentacao.component';
 import { MedicationComponent } from './user/medication/medication.component';
 import { MedicationListComponent } from './user/medication-list/medication-list.component';
 import { GlucoseComponent } from './user/glucose/glucose.component';
@@ -42,6 +43,7 @@ import { ReportComponent } from './user/report/report.component';
     NotificationsComponent,
     UpgradeComponent,
     BloodPreasureComponent,
+    AlimentacaoComponent,
     MedicationComponent,
     MedicationListComponent,
     GlucoseComponent,

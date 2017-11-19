@@ -23,11 +23,16 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let row of tableData2.dataRows; let j = index" >
-                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0 || i===1">  {{cell}} </ng-container> 
+                               <td *ngFor="let cell of row ; let i = index" >
+                                   <ng-container *ngIf="i==0 || i===1"> {{cell}} </ng-container>
                                 <ng-container *ngIf="i>1 ">
-                                    <div style="margin-left: 35%; margin-right: 55%; background-color: rgba(237, 61, 61, 0.146)"></div>
+                                <div *ngIf="j===0 && i===2" style="background-color: rgba(150, 8, 8, 0.564); margin-right: 35%" >
                                     <div style="margin-left: 35%;">
                                             {{cell}}
+                                    </div>
+                                </div>
+                                        <div *ngIf="j!=0 || i!=2" style="margin-left: 35%;">
+                                                {{cell}}
                                         </div>
                                  </ng-container>
                                     </td>
