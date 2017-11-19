@@ -14,8 +14,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let row of tableData2.dataRows">
-                                <td *ngFor="let cell of row">{{cell}}</td>
+                            <tr *ngFor="let row of tableData2.dataRows" >
+                               <td *ngFor="let cell of row ; let i = index" ><ng-container *ngIf="i==0 || i==4">  {{cell}} </ng-container> 
+                                <ng-container *ngIf="i!=0 && i!=4"> 
+                                	<span [ngStyle]=getStyle(cell)>{{sist(cell)}} </span> 
+                                	/ 
+                                	<span [ngStyle]=getStyleDist(cell)>{{sistDist(cell)}} </span>
+
+                                 </ng-container>
+
+                                	</td>
                             </tr>
                         </tbody>
                     </table>
